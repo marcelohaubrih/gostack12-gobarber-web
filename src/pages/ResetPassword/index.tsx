@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-expressions */
 import React, { useCallback, useRef } from 'react';
-import { Link, useHistory, useLocation } from 'react-router-dom';
-import { FiLogIn, FiArrowLeftCircle, FiLock } from 'react-icons/fi';
+import { Link, useLocation } from 'react-router-dom';
+import { FiArrowLeftCircle, FiLock } from 'react-icons/fi';
 import { Form } from '@unform/web';
 import { FormHandles } from '@unform/core';
 import * as Yup from 'yup';
@@ -23,7 +23,6 @@ interface ResetPasswordFormData {
 const ResetPassword: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
   const { addToast } = useToast();
-  const history = useHistory();
   const location = useLocation();
 
   const handleSubmit = useCallback(
@@ -80,7 +79,7 @@ const ResetPassword: React.FC = () => {
         });
       }
     },
-    [addToast, history, location.search],
+    [addToast, location.search],
   );
   return (
     <Container>
