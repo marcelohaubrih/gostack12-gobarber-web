@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-expressions */
 import React, { useCallback, useRef } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { FiLogIn, FiMail, FiLock } from 'react-icons/fi';
