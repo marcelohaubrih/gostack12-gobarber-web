@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+    web-gobarber:
+        build: .
+        restart: always
+        container_name: web-gobarber
+        volumes:
+            - .:/home/node/api
+            - /home/node/api/node_modules
+        ports:
+            - '3000:3000'
+        networks:
+            - nodejs-api
+
+networks:
+    nodejs-api:
+        driver: bridge
