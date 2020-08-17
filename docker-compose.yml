@@ -1,18 +1,14 @@
-version: '3'
-
+version: '3.7'
 services:
-    web-gobarber:
-        build: .
-        restart: always
+    app:
         container_name: web-gobarber
+        build:
+            context: .
+            dockerfile: Dockerfile
         volumes:
-            - .:/home/node/api
-            - /home/node/api/node_modules
+            - '.:/app'
+            - '/app/node_modules'
         ports:
             - '3000:3000'
-        networks:
-            - nodejs-api
-
-networks:
-    nodejs-api:
-        driver: bridge
+        environment:
+            - NODE_ENV=development
