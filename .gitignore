@@ -11,6 +11,12 @@
 # production
 /build
 
+# Docker
+
+Dockerfile-*
+Dockerfile-dev
+Dockerfile-prod
+docker-compose-prod.yml
 # misc
 .DS_Store
 .env.local
