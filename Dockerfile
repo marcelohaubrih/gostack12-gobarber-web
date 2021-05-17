@@ -10,5 +10,13 @@ COPY package.json /app/package.json
 RUN yarn
 
 EXPOSE 3000
+
+ENV TZ=America/Sao_Paulo
+RUN apk update
+RUN apk upgrade
+RUN apk add ca-certificates && update-ca-certificates
+RUN apk add --update tzdata
+RUN rm -rf /var/cache/apk/*
+
 # start app
 CMD ["yarn", "start"]
